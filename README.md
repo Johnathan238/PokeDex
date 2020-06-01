@@ -20,8 +20,8 @@ https://1drv.ms/w/s!ArvFj8V7oC9agZBnzzaVvtRZUAxBpw
 |   StoryBook      | I would like to use storyBook beacuse the Pokémon names will be in a component|
 
 #### Data
-|    API     | Quality Docs? |      | Sample Query                            |
-| :--------: | :-----------: |         :--------------------------------------|
+|    API     | Quality Docs? |        Sample Query                            |
+| :--------: | :-----------: |    :--------------------------------------:    |
 | PokéApi    |      yes      |  | https://pokeapi.co/api/v2/pokemon?offset=20&limit=10|
 
 ```
