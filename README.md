@@ -22,7 +22,7 @@ https://1drv.ms/w/s!ArvFj8V7oC9agZBnzzaVvtRZUAxBpw
 #### Data
 |    API     | Quality Docs? |        Sample Query                            |
 | :--------: | :-----------: |    :--------------------------------------:    |
-| PokéApi    |      yes      |  | https://pokeapi.co/api/v2/pokemon?offset=20&limit=10|
+| PokéApi    |      yes      | https://pokeapi.co/api/v2/pokemon?offset=20&limit=10|
 
 ```
 {
