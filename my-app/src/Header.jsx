@@ -9,7 +9,7 @@ export default function Header(props) {
               Pokédex
           </span>
             <input type="text" onChange={props.handleChange} />
-            <button onClick={props.search}>search!</button>
+            <button onClick={props.search}>Lets Find Your Pokémon!</button>
           </a>
         </div>
       </nav>

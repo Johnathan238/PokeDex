@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios"
-import logo from './logo.svg';
 import './App.css';
-import { Route } from 'react-router-dom'
 import Header from "./Header"
 
 export default class App extends Component {
@@ -15,7 +13,7 @@ export default class App extends Component {
   }
 
 
-  componentDidMount = () => {
+  async componentDidMount () {
     const pokemon = await axios("https://pokeapi.co/api/v2/pokemon/")
     this.setState({
       pokemon: pokemon.data.results
