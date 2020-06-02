@@ -10,8 +10,7 @@ export default class App extends Component {
     pokemon: [],
     searchText: '',
     pokemonDetail: {},
-    detailView: false,
-    bgColor: 'white'
+    detailView: false
   }
 
 
@@ -35,17 +34,6 @@ export default class App extends Component {
     })
   }
 
-  darkMode = () => {
-    if (this.state.bgColor == 'white') {
-      this.setState({
-        bgColor: 'black',
-      })
-    } else {
-      this.setState({
-        bgColor: 'white',
-      })
-    }
-  }
 
   render() {
     let mainContent
@@ -55,7 +43,6 @@ export default class App extends Component {
         className="d-flex justify-content-center flex-wrap col-10"
       >
         {this.state.pokemon.map(pokemon => <Link to={`/pokemon/${pokemon.name}`}><button>{pokemon.name}</button></Link>)}
-        
       </section>
     }
     let reDirect = this.state.detailView && <Redirect to={`/pokemon/ditto`}/>
@@ -64,16 +51,14 @@ export default class App extends Component {
         <Header handleChange={this.handleChange} search={this.search} />
         <Route path="/" exact>
           <main className="d-flex justify-content-center align-items-center">
-            {mainContent}
+            {mainContent}  
           </main>
         </Route>
         <Route path="/pokemon/:name">
-          <PokemonDetail />
+          <PokemonDetail info = {this.state.pokemon}/>
         </Route>
         {reDirect}
       </>
     );
   }
-
-
 }
