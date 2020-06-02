@@ -1,7 +1,6 @@
 main {
   height: calc(100vh - 108px);
-  background-image: url("https://cdn.wccftech.com/wp-content/uploads/2016/08/Pokemon-GO-PokeBall.png");
-  background-color: #f6e652;
+  background-image: url("https://i.pinimg.com/originals/71/8f/89/718f89d54df6620d53cfb4a2b0495df8.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center left;
@@ -10,6 +9,10 @@ main {
 header {
   width: 100vw;
   height: 108px;
+  background-image: url("https://wallpaperaccess.com/full/1794060.jpg");
+  background-size: center;
+  
+ 
 }
 
 .navbar-brand {

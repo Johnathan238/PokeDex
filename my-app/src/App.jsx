@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from "axios"
 import './App.css';
 import Header from "./Header"
+import PokemonDetail from './PokemonDetail';
+import { Route, Redirect, Link } from 'react-router-dom';
 
 export default class App extends Component {
   state = {
@@ -13,8 +15,8 @@ export default class App extends Component {
   }
 
 
-  async componentDidMount () {
-    const pokemon = await axios("https://pokeapi.co/api/v2/pokemon/")
+  async componentDidMount() {
+    const pokemon = await axios("https://pokeapi.co/api/v2/pokemon/?limit=200")
     this.setState({
       pokemon: pokemon.data.results
     })
@@ -47,22 +49,28 @@ export default class App extends Component {
 
   render() {
     let mainContent
-    if (this.state.detailView) {
-      mainContent = <h1>{this.state.pokemonDetail.name}</h1>
-    } else {
+    if (!this.state.detailView) {
       mainContent = <section
         id="results"
         className="d-flex justify-content-center flex-wrap col-10"
       >
-        {this.state.pokemon.map(pokemon => <button>{pokemon.name}</button>)}
+        {this.state.pokemon.map(pokemon => <Link to={`/pokemon/${pokemon.name}`}><button>{pokemon.name}</button></Link>)}
+        
       </section>
     }
+    let reDirect = this.state.detailView && <Redirect to={`/pokemon/ditto`}/>
     return (
       <>
         <Header handleChange={this.handleChange} search={this.search} />
-        <main className="d-flex justify-content-center align-items-center">
-          {mainContent}
-        </main>
+        <Route path="/" exact>
+          <main className="d-flex justify-content-center align-items-center">
+            {mainContent}
+          </main>
+        </Route>
+        <Route path="/pokemon/:name">
+          <PokemonDetail />
+        </Route>
+        {reDirect}
       </>
     );
   }
