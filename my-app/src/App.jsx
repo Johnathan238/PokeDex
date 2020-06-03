@@ -3,10 +3,11 @@ import axios from "axios"
 import './App.css';
 import Header from "./Header"
 import PokemonDetail from './PokemonDetail';
-import { Route, Redirect, Link } from 'react-router-dom';
+import { Route, Redirect, Link, withRouter } from 'react-router-dom';
 import Footer from "./Footer"
 
-export default class App extends Component {
+
+ class App extends Component {
   state = {
     allPokemons: [],
     searchText: '',
@@ -16,7 +17,7 @@ export default class App extends Component {
 
 
   async componentDidMount() {
-    const pokemons = await axios("https://pokeapi.co/api/v2/pokemon/?limit=900")
+    const pokemons = await axios("https://pokeapi.co/api/v2/pokemon/?limit=600")
     this.setState({
       allPokemons: pokemons.data.results
     })
@@ -29,10 +30,10 @@ export default class App extends Component {
 
   search = async () => {
     const pokemon = await axios(`https://pokeapi.co/api/v2/pokemon/${this.state.searchText}`)
-    this.setState({
-      pokemonDetail: pokemon.data,
-      detailView: true
-    })
+    this.setState(prevState => ({
+      allPokemons: [...prevState.allPokemons,pokemon.data]
+    }))
+    this.props.history.push(`/pokemon/${pokemon.data.name}`)
   }
 
   
@@ -40,15 +41,15 @@ export default class App extends Component {
 
   render() {
     let mainContent
-    if (!this.state.detailView) {
+    
       mainContent = <section
         id="results"
         className="mainContent"
       >
         {this.state.allPokemons.map(pokemon => <Link to={`/pokemon/${pokemon.name}`}><button>{pokemon.name}</button></Link>)}
       </section>
-    }
-    let reDirect = this.state.detailView && <Redirect to={`/pokemon/${this.state.pokemonDetail.name}`}/>
+    
+    
     return (
       <>
         <Header handleChange={this.handleChange} search={this.search} />
@@ -60,10 +61,10 @@ export default class App extends Component {
         <Route path="/pokemon/:name">
           <PokemonDetail info = {this.state.allPokemons}/>
         </Route>
-        {reDirect}
-        <pokemonDetail />
         <Footer />
       </>
     );
   }
-}
+ }
+
+ export default withRouter(App)

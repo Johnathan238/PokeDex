@@ -45,6 +45,14 @@ button {
 
 }
 
+div{
+  background-color: coral;
+}
+
+span{
+  font-size: large;
+}
+
 #results {
   font-size: 18px;
 }

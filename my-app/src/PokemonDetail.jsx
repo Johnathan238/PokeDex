@@ -43,16 +43,21 @@ class PokemonDetail extends Component {
       <>
         
         {this.state.pokeData &&
-          <div>
+          <div className="pokemon">
           <div>{pokeData.name}</div>
           <img src={pokeData.sprites.front_default} />
+          <img src={pokeData.sprites.back_default} />
           {pokeData.stats.map(stat => {
-            return <div>{stat.base_stat}</div>
+            return <div>{stat.stat.name}{stat.base_stat}</div>
           })}
           {pokeData.abilities.map(ability => {
             return <div>{ability.ability.name}</div>
           })}
-          </div>
+          {pokeData.moves.map(move => {
+            return <div>{move.move.name}</div>
+          })}
+           </div>
+          
         }
       </>
 
