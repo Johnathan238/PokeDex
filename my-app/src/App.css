@@ -2,8 +2,12 @@ main {
   height: calc(100vh - 108px);
   background-image: url("https://i.pinimg.com/originals/71/8f/89/718f89d54df6620d53cfb4a2b0495df8.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center left;
+  background-color: #FFB6C1;
+  background-position: center center;
+  background-attachment: fixed;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 header {
@@ -19,8 +23,26 @@ header {
   font-size: 28px;
 }
 
+nav{
+  display: flex;
+  justify-content:center;
+  width:100%;
+}
+
+nav a{
+  margin: 0 1em;
+  text-decoration: none;
+  color:rgb(255, 236, 63);
+}
+
 button {
-  font-size: 20px;
+  background-color: #FFDE00;
+  display: center;
+  padding: auto;
+  justify-content: center;
+  font-family: 'Play', sans-serif;
+
+
 }
 
 #results {

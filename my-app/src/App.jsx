@@ -4,10 +4,11 @@ import './App.css';
 import Header from "./Header"
 import PokemonDetail from './PokemonDetail';
 import { Route, Redirect, Link } from 'react-router-dom';
+import Footer from "./Footer"
 
 export default class App extends Component {
   state = {
-    pokemon: [],
+    allPokemons: [],
     searchText: '',
     pokemonDetail: {},
     detailView: false
@@ -15,9 +16,9 @@ export default class App extends Component {
 
 
   async componentDidMount() {
-    const pokemon = await axios("https://pokeapi.co/api/v2/pokemon/?limit=200")
+    const pokemons = await axios("https://pokeapi.co/api/v2/pokemon/?limit=900")
     this.setState({
-      pokemon: pokemon.data.results
+      allPokemons: pokemons.data.results
     })
   }
   handleChange = (e) => {
@@ -34,30 +35,34 @@ export default class App extends Component {
     })
   }
 
+  
+
 
   render() {
     let mainContent
     if (!this.state.detailView) {
       mainContent = <section
         id="results"
-        className="d-flex justify-content-center flex-wrap col-10"
+        className="mainContent"
       >
-        {this.state.pokemon.map(pokemon => <Link to={`/pokemon/${pokemon.name}`}><button>{pokemon.name}</button></Link>)}
+        {this.state.allPokemons.map(pokemon => <Link to={`/pokemon/${pokemon.name}`}><button>{pokemon.name}</button></Link>)}
       </section>
     }
-    let reDirect = this.state.detailView && <Redirect to={`/pokemon/ditto`}/>
+    let reDirect = this.state.detailView && <Redirect to={`/pokemon/${this.state.pokemonDetail.name}`}/>
     return (
       <>
         <Header handleChange={this.handleChange} search={this.search} />
         <Route path="/" exact>
-          <main className="d-flex justify-content-center align-items-center">
+          <main className="main">
             {mainContent}  
           </main>
         </Route>
         <Route path="/pokemon/:name">
-          <PokemonDetail info = {this.state.pokemon}/>
+          <PokemonDetail info = {this.state.allPokemons}/>
         </Route>
         {reDirect}
+        <pokemonDetail />
+        <Footer />
       </>
     );
   }

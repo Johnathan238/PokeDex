@@ -8,10 +8,13 @@ class PokemonDetail extends Component {
   }
 
   async componentDidMount() {
+    console.log("CDM");
+    
     const selectedPokemon = this.props.info.find(pokemon => (
+
       pokemon.name == this.props.match.params.name
     ))
-    console.log(selectedPokemon);
+    // console.log(selectedPokemon);
 
     const response = await axios.get(selectedPokemon.url)
 
@@ -20,20 +23,39 @@ class PokemonDetail extends Component {
     })
   }
 
+  // componentDidUpdate(prevProps, prevState) {
+  //   // console.log(prevProps, prevState);
+    
+  //   // if (prevState.pokeData !== this.state.pokeData) {
+  //   //   this.componentDidMount()
+  //   // }
+
+  // }
+
 
 
 
   render() {
     console.log(this.props.match.params.name);
-
+    let { pokeData } = this.state
 
     return (
       <>
-        {this.state.pokeData && 
-          <div>{this.props.match.params.name}</div> 
-      }
-      </>
         
+        {this.state.pokeData &&
+          <div>
+          <div>{pokeData.name}</div>
+          <img src={pokeData.sprites.front_default} />
+          {pokeData.stats.map(stat => {
+            return <div>{stat.base_stat}</div>
+          })}
+          {pokeData.abilities.map(ability => {
+            return <div>{ability.ability.name}</div>
+          })}
+          </div>
+        }
+      </>
+
     )
   }
 }
