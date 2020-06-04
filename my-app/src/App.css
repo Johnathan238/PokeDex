@@ -1,5 +1,4 @@
 main {
-  height: calc(100vh - 108px);
   background-image: url("https://i.pinimg.com/originals/71/8f/89/718f89d54df6620d53cfb4a2b0495df8.jpg");
   background-size: cover;
   background-color: #FFB6C1;
@@ -9,14 +8,10 @@ main {
   text-align: center;
   margin: 0 auto;
 }
-
+  
 header {
   width: 100vw;
   height: 108px;
-  background-image: url("https://wallpaperaccess.com/full/1794060.jpg");
-  background-size: center;
-  
- 
 }
 
 .navbar-brand {
@@ -37,6 +32,8 @@ nav a{
 
 button {
   background-color: #FFDE00;
+  width: 30%;
+  margin: 15px;
   display: center;
   padding: auto;
   justify-content: center;
@@ -47,12 +44,40 @@ button {
 
 div{
   background-color: coral;
+  display: center;
+  padding: auto;
+  justify-content: center;
+  font-family: 'Play', sans-serif;
 }
 
 span{
-  font-size: large;
+  width: 15%;
+  margin: auto;
+  display: center;
+  padding: auto;
+  justify-content: center;
+  font-family: 'Play', sans-serif;
 }
 
 #results {
   font-size: 18px;
 }
+
+.pokémon-name{
+  display: center;
+  padding: auto;
+  justify-content: center;
+  font-family: 'Play', sans-serif;
+}
+
+img{
+  width: 200px;
+  border: 7px;
+  border-radius: 20px;
+  padding-top: 0%;
+}
+
+.pokéBall{
+  width: auto;
+}
+

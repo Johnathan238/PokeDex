@@ -1,4 +1,4 @@
-import  React, { Component }  from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 export default class Header extends Component {
@@ -28,6 +28,13 @@ export default class Header extends Component {
         <nav className="navbar">
           <div className="nav">
             <a className="Atag" href="#">
+              <img 
+                src="https://www.freeiconspng.com/uploads/pokeball-transparent-png-2.png"
+                width="55"
+                height="55"
+                className="pokéBall"
+                alt="Pokéball"
+              />
               <Link to="/">
                 <span className="Span">
                   Pokédex

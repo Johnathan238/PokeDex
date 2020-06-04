@@ -7,6 +7,7 @@ import { Route, Redirect, Link, withRouter } from 'react-router-dom';
 import Footer from "./Footer"
 
 
+
  class App extends Component {
   state = {
     allPokemons: [],
@@ -17,7 +18,7 @@ import Footer from "./Footer"
 
 
   async componentDidMount() {
-    const pokemons = await axios("https://pokeapi.co/api/v2/pokemon/?limit=600")
+    const pokemons = await axios("https://pokeapi.co/api/v2/pokemon/?limit=500")
     this.setState({
       allPokemons: pokemons.data.results
     })

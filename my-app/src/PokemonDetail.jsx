@@ -40,26 +40,27 @@ class PokemonDetail extends Component {
     let { pokeData } = this.state
 
     return (
-      <>
-        
+      <div className="all-pokémon">
         {this.state.pokeData &&
           <div className="pokemon">
-          <div>{pokeData.name}</div>
+          <div className="pokémon-name">{pokeData.name}</div>
           <img src={pokeData.sprites.front_default} />
           <img src={pokeData.sprites.back_default} />
           {pokeData.stats.map(stat => {
-            return <div>{stat.stat.name}{stat.base_stat}</div>
+            return <div className="pokémon-stats">{stat.stat.name}{stat.base_stat}</div>
           })}
+          <h2>Pokémon Ability</h2>
           {pokeData.abilities.map(ability => {
-            return <div>{ability.ability.name}</div>
+            return <div className="pokémon-abilities">{ability.ability.name}</div>
           })}
+          <h3>Pokémon Moves</h3>
           {pokeData.moves.map(move => {
-            return <div>{move.move.name}</div>
+            return <div className="pokémon-moves">{move.move.name}</div>
           })}
            </div>
           
         }
-      </>
+      </div>
 
     )
   }
