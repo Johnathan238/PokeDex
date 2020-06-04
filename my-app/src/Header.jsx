@@ -30,8 +30,8 @@ export default class Header extends Component {
             <a className="Atag" href="#">
               <img 
                 src="https://www.freeiconspng.com/uploads/pokeball-transparent-png-2.png"
-                width="55"
-                height="55"
+                width="50"
+                height="48"
                 className="pokéBall"
                 alt="Pokéball"
               />

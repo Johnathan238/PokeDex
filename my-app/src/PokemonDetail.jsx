@@ -8,13 +8,11 @@ class PokemonDetail extends Component {
   }
 
   async componentDidMount() {
-    console.log("CDM");
     
     const selectedPokemon = this.props.info.find(pokemon => (
 
       pokemon.name == this.props.match.params.name
     ))
-    // console.log(selectedPokemon);
 
     const response = await axios.get(selectedPokemon.url)
 
@@ -22,18 +20,6 @@ class PokemonDetail extends Component {
       pokeData: response.data
     })
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   // console.log(prevProps, prevState);
-    
-  //   // if (prevState.pokeData !== this.state.pokeData) {
-  //   //   this.componentDidMount()
-  //   // }
-
-  // }
-
-
-
 
   render() {
     console.log(this.props.match.params.name);

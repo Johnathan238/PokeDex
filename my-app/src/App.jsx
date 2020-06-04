@@ -3,8 +3,9 @@ import axios from "axios"
 import './App.css';
 import Header from "./Header"
 import PokemonDetail from './PokemonDetail';
-import { Route, Redirect, Link, withRouter } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import Footer from "./Footer"
+import PokemonList from "./PokemonList"
 
 
 
@@ -41,14 +42,9 @@ import Footer from "./Footer"
 
 
   render() {
-    let mainContent
+  
     
-      mainContent = <section
-        id="results"
-        className="mainContent"
-      >
-        {this.state.allPokemons.map(pokemon => <Link to={`/pokemon/${pokemon.name}`}><button>{pokemon.name}</button></Link>)}
-      </section>
+      
     
     
     return (
@@ -56,7 +52,7 @@ import Footer from "./Footer"
         <Header handleChange={this.handleChange} search={this.search} />
         <Route path="/" exact>
           <main className="main">
-            {mainContent}  
+            <PokemonList allPokemons={this.state.allPokemons}/> 
           </main>
         </Route>
         <Route path="/pokemon/:name">
