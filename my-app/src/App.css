@@ -1,3 +1,7 @@
+*{
+  margin: 0px;
+}
+
 main {
   background-image: url("https://i.pinimg.com/originals/71/8f/89/718f89d54df6620d53cfb4a2b0495df8.jpg");
   background-size: cover;
@@ -111,4 +115,21 @@ a{
 ul.hover{
   background-color: #FFDE00;
 }
+
+@media screen and (max-width: 768px){
+  app, body{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 320px){
+  app, body{
+    width: 100%;
+  }
+}
+
+
+
+
+
 
