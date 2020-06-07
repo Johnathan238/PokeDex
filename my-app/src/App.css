@@ -85,3 +85,30 @@ img{
   width: auto;
 }
 
+
+.about, article{
+  width: 25%;
+  margin: auto;
+  display: center;
+  padding: 90px;
+  display: flexbox;
+  justify-content: center;
+  font-family: 'Play', sans-serif;
+}
+
+marquee{
+  padding: 10px;
+}
+
+.Pokemon-History{
+  padding: 5px;
+}
+
+a{
+  padding: 10px;
+}
+
+ul.hover{
+  background-color: #FFDE00;
+}
+

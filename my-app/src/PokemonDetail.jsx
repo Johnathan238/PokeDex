@@ -29,7 +29,7 @@ class PokemonDetail extends Component {
       <div className="all-pokémon">
         {this.state.pokeData &&
           <div className="pokemon">
-          <div className="pokémon-name">{pokeData.name}</div>
+          <h1 className="pokémon-name">{pokeData.name}</h1>
           <img src={pokeData.sprites.front_default} />
           <img src={pokeData.sprites.back_default} />
           {pokeData.stats.map(stat => {

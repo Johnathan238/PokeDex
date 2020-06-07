@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import About from "./About"
+
+
 export default class Header extends Component {
   constructor() {
     super()
@@ -44,6 +47,7 @@ export default class Header extends Component {
               <Link to={`/pokemon/${this.state.searchText}`}>
                 <button onClick={this.props.search}>Lets Find Your Pokémon!</button>
               </Link>
+              <Link to="/about">About</Link>
             </a>
           </div>
         </nav>
