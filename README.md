@@ -98,11 +98,10 @@ src
 #### Component Estimates
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add title & nav     |    L     |     2 hrs      |     0 hrs     |    0 hrs    |
-| Call th API for data |    H    |     3 hrs     |     0 hrs    |     0 hrs  |
-| Making a Route with Pokemon names |     H     |     6 hrs      |     0 hrs     |     0 hrs    |
-| Build a component using StoryBook  |    H   |     5 hrs      |     0 hrs     |    0 hrs    |
-| Footer  |    L     |     1 hrs      |     0 hrs     |    0 hrs    |
+| Add title & nav     |    L     |     2 hrs      |     1 hrs     |    1 hrs    |
+| Call th API for data |    H    |     3 hrs     |     3 hrs    |     2 hrs  |
+| Making a Route with Pokemon names |     H     |     6 hrs      |     4 hrs     |     4 hrs    |
+| Footer  |    L     |     1 hrs      |     1 hrs     |    1hrs    |
 
 ## Project Delivery
 
